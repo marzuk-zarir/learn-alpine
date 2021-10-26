@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"
+        ></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div x-data="dropdown">
+            <button @click="toggle()" @keydown.escape="hide()">
+                Dropdown &downarrow;
+            </button>
+            <ul style="background-color: gray" @click.outside="hide()">
+                <li>test 1</li>
+                <li>test 2</li>
+                <li>test 3</li>
+            </ul>
+        </div>
+        <script>
+            const dropdown = {
+                open: false,
+                toggle() {
+                    this.open = !this.open
+                },
+                hide() {
+                    this.open = false
+                }
+            }
+        </script>
+    </body>
+</html>
