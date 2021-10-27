@@ -15,7 +15,11 @@
             <button @click="toggle()" @keydown.escape="hide()">
                 Dropdown &downarrow;
             </button>
-            <ul style="background-color: gray" @click.outside="hide()">
+            <ul
+                style="background-color: gray"
+                x-show="open"
+                @click.outside="hide()"
+            >
                 <li>test 1</li>
                 <li>test 2</li>
                 <li>test 3</li>
